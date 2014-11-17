@@ -1,0 +1,1 @@
+This is an app to click on things on LinkedIn, so people will notice my profile and offer me jobs.  Jobs, I tell you!

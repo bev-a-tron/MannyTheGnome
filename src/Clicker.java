@@ -23,4 +23,9 @@ public class Clicker {
         driver.findElement(By.id("session_password-login")).sendKeys(password);
         driver.findElement(By.id("btn-primary")).click();
     }
+
+    public void goToPeopleYouMayKnow() {
+        driver.findElement(By.linkText("People You May Know")).click();
+    }
+    
 }

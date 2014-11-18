@@ -25,9 +25,14 @@ public class ClickerTest {
     }
 
     @Test
-    public void shouldLogin() throws Exception {
+    public void shouldLoginAndClickOnPeople() throws Exception {
+
         clicker.login("http://www.linkedin.com/in/beverlylau");
-        Thread.sleep(2000L);
+        Thread.sleep(3000L);
         assertThat(driver.getCurrentUrl(), containsString("home"));
+
+        clicker.goToPeopleYouMayKnow();
+        assertThat(driver.getCurrentUrl(), containsString("pymk"));
     }
+
 }

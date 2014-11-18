@@ -5,3 +5,5 @@ gradlew.bat
 .gradle
 .idea
 *.iml
+email.txt
+password.txt

@@ -4,16 +4,19 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.matchers.JUnitMatchers.containsString;
 
 public class ClickerTest {
 
     private WebDriver driver;
+    private Clicker clicker;
 
     @Before
     public void setUp() throws Exception {
+
         driver = new FirefoxDriver();
+        clicker = new Clicker(driver);
     }
 
     @After
@@ -22,10 +25,9 @@ public class ClickerTest {
     }
 
     @Test
-    public void shouldNavigateToPage() throws Exception {
-        Clicker clicker = new Clicker(driver);
-        clicker.navigateToPage("http://www.linkedin.com/in/beverlylau");
-        assertThat(driver.getCurrentUrl(), is("http://www.linkedin.com/in/beverlylau"));
+    public void shouldLogin() throws Exception {
+        clicker.login("http://www.linkedin.com/in/beverlylau");
+        Thread.sleep(2000L);
+        assertThat(driver.getCurrentUrl(), containsString("home"));
     }
-
 }
